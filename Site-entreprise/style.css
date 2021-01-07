@@ -1,0 +1,1316 @@
+/*-------------------------------------------------------------------------------
+                                   VARIABLES
+--------------------------------------------------------------------------------*/
+
+:root {
+    --color-h1: #2F2F2F;
+    --color-h2: #464646;
+    --color-h3: #626262;
+    --color-p: #464646;
+    --color-bubbles: #DFDBB9;
+    --color-light-background: #F2F2F2;
+    --color-light-text: #FFFFFF;
+    --color-button: #F36289;
+    --color-button-hover: #f0376a;
+    --color-navbar: #826F85;
+    font-size: 12.5px;
+}
+
+/*-------------------------------------------------------------------------------
+                                NAVBAR AND FOOTER
+--------------------------------------------------------------------------------*/
+
+/*NAVBAR*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-navbar);
+    height: 8rem;
+}
+
+#burger-menu {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+    display: none;
+    padding-top: 0.5rem;
+}
+
+#burger {
+    position: absolute;
+    display: none;
+    width: 6rem;
+    right: 1rem;
+    top: 1rem;
+    height: 6rem;
+    opacity: 1;
+    z-index: -1;
+    opacity: 0;
+}
+
+#burger-line1, #burger-line2, #burger-line3 {
+    height: 1rem;
+    width: 6rem;
+    background-color: var(--color-light-background);
+    transition: transform 0.4s;
+}
+
+#burger-line2 {
+    transition: transform 0.1s
+}
+
+#burger-line1, #burger-line2 {
+    margin-bottom: 1rem;
+}
+
+#logo-and-title {
+    display: flex;
+}
+
+#tabs-list {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    list-style: none;
+    display: flex;
+    color: var(--color-light-text);
+    font-weight: 300;
+    width: 60rem;
+    justify-content: space-evenly;
+}
+
+#navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+#navbar-icons a {
+    margin: 0 0.5rem;
+}
+
+#account-icon {
+    transform: translateY(0.2rem);
+}
+
+#logo-header {
+    height: 5rem;
+    width: 5rem;
+    display: inline-block;
+    position: relative;
+    margin: 0 2rem 0 2rem;
+}
+
+#poulp-co {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.75rem;
+    font-weight: 500;
+    color: var(--color-light-text);
+}
+
+#logo-big-circle, #logo-small-circle1, #logo-small-circle2, #logo-small-circle3 {
+    background-color: var(--color-light-text);
+    border-radius: 50%;
+    position: absolute;
+}
+
+#logo-big-circle {
+    width: 82%;
+    height: 82%;
+    left: 8%;
+}
+
+#logo-small-circle1, #logo-small-circle2, #logo-small-circle3 {
+    width: 30%;
+    height: 30%;
+    top: 65%;
+}
+
+#logo-small-circle2 {
+    left: 35%;
+}
+
+#logo-small-circle3 {
+    right: 0%;
+}
+
+#selected-tab {
+    text-decoration: underline;
+    font-weight: 300;
+}
+
+/*FOOTER*/
+
+footer {
+    height: 4rem;
+    background-color: var(--color-navbar);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-family: 'Rasa', serif;
+    font-size: 1.5rem;
+    color: var(--color-light-text);
+}
+
+/*-------------------------------------------------------------------------------
+                                GENERAL TAGS
+--------------------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+h1, h2 {
+    font-family: 'Rasa', serif;
+}
+
+h1 {
+    font-size: 4.5rem;
+    color: var(--color-h1);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--color-h2);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 2.25rem;
+    color: var(--color-h3);
+    font-weight: 500;
+}
+
+p {
+    color: var(--color-p);
+}
+
+button {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding: 2.5rem 6rem 2.5rem 6rem;
+    border: none;
+    border-radius: 1.5rem;
+    color: var(--color-light-text);
+    background-color: var(--color-button);
+    margin-top: 2rem;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: var(--color-button-hover);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-container {
+    overflow: hidden;
+    position: relative;
+}
+
+/*-------------------------------------------------------------------------------
+                                    HOME-PAGE
+                                  LANDING FRAME
+--------------------------------------------------------------------------------*/
+
+#landing-page {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: var(--color-light-background);
+    overflow: hidden;
+}
+
+#landing-page h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--color-h1);
+}
+
+#landing-page h3 {
+    font-size: 3rem;
+    font-family: 'Rasa', serif;
+    font-weight: 500;
+    color: var(--color-h1);
+}
+
+#sell-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    z-index: 2;
+    text-align: center;
+}
+
+#main-image {
+    background-image: url("images/image-produit.png");
+    height: 20vw;
+    width: 70vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 6rem;
+    left: 15vw;
+    z-index: 3;
+}
+
+/*BUBBLES*/
+
+.bubbles {
+    position: absolute;
+    width: 32vw;
+    height: 32vw;
+    bottom: 0;
+    z-index: 1;
+}
+
+#bubble1, #bubble2, #bubble3, #bubble4, #bubble5 {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-bubbles);
+}
+
+#bubble1 {
+    height: 120%;
+    width: 120%;
+    bottom: -35%;
+    left: -40%;
+}
+
+#bubble2 {
+    height: 120%;
+    width: 120%;
+    bottom: -45%;
+    left: 30%;
+}
+
+#bubble3 {
+    height: 120%;
+    width: 120%;
+    bottom: -50%;
+    left: 80%;
+}
+
+#bubble4 {
+    height: 120%;
+    width: 120%;
+    bottom: -49%;
+    left: 150%;
+}
+
+#bubble5 {
+    height: 120%;
+    width: 120%;
+    bottom: -37%;
+    left: 230%;
+}
+
+/*-------------------------------------------------------------------------------
+                                    HOME-PAGE
+                                 "A PROPOS" FRAME
+--------------------------------------------------------------------------------*/
+
+#a-propos article {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+#a-propos p {
+    margin: 0 2vw 2vw 2vw;
+}
+
+#photo-cthullu, #photo-mrpoulp {
+    width: 20vw;
+}
+
+#photo-usine, #photo-lovecraft {
+    width: 25vw;
+}
+
+#a-propos p img {
+    height: 1em;
+}
+
+#title-a-propos {
+    background-color: var(--color-navbar);
+    text-align: center;
+    color: var(--color-light-text);
+    font-size: 5rem;
+}
+
+#subtitle-a-propos {
+    font-size: 3rem;
+    font-family: 'Rasa', serif;
+    margin: 1.5rem 0 1.5rem 22vw;
+}
+
+
+/*-------------------------------------------------------------------------------
+                                    PELUCHE-PAGE
+                                  "BEST SELLER" FRAME
+--------------------------------------------------------------------------------*/
+
+#best-seller {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: calc(100vh - 8rem);
+    overflow: hidden;
+}
+
+/*OVERVIEW SECTION*/
+
+#overview {
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    justify-content: space-around;
+    margin: 3rem 0 3rem 0;
+}
+
+#price-and-promo {
+    display: flex;
+    flex-direction: column;
+}
+
+#old-price-and-percentage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#new-price-and-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#old-price {
+    text-decoration: line-through;
+    font-size: 3rem;
+    flex-grow: 0.3;
+    flex-basis: 6rem;
+}
+
+#percentage {
+    color: var(--color-button);
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left;
+    flex-grow: 1;
+    flex-basis: 12rem;
+}
+
+#new-price {
+    font-size: 3.6rem;
+    font-weight: 700;
+    flex-grow: 0.3;
+    flex-basis: 6rem;
+}
+
+#promo-time {
+    text-align: left;
+    flex-grow: 1;
+    flex-basis: 12rem;
+    font-size: 1.2em;
+}
+
+#buy-button {
+    width: 50%;
+}
+
+/*DETAILS SECTION*/
+
+#details {
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    justify-content: space-around;
+    margin: 3rem 0 3rem 0;
+}
+
+#colors-and-description {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+#colors {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+}
+
+.image-unselected-color {
+    border: solid 0.3rem rgba(255, 200, 200, 0);
+    transition: border 0.1s;
+}
+
+.image-unselected-color:hover {
+    border: solid 0.3rem rgba(255, 200, 200, 0.7);
+}
+
+#selected-color {
+    border: solid 0.3rem var(--color-button);
+}
+
+#flip-images-and-double-face {
+    display: flex;
+    flex-direction: column;
+}
+
+#flip-images {
+    display: flex;
+    flex-direction: row;
+}
+
+#colors img {
+    width: 18rem;
+    cursor: pointer;
+}
+
+#flip-image1 {
+    margin-right: calc(2vw - 10px);
+}
+
+#flip-images img {
+    width: calc(18rem + 10px);
+}
+
+#description {
+    width: 18rem;
+    padding-top: 2.25rem;
+}
+
+#description p {
+    margin-bottom: 1.5rem;
+}
+
+#double-face {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#bubbles-products {
+    position: absolute;
+    width: 64vh;
+    height: 64vh;
+    bottom: -35vh;
+    z-index: -1;
+}
+
+/*-------------------------------------------------------------------------------
+                                    PRODUCTS-PAGE
+                                  "PRODUCTS LIST" FRAME
+--------------------------------------------------------------------------------*/
+
+#more-products {
+    background-color: var(--color-light-text);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 3rem;
+    min-height: calc(100vh - 4rem);
+    white-space: nowrap;
+}
+
+#more-products > header {
+    background-color: var(--color-navbar);
+    grid-column: 1/3;
+    color: var(--color-light-text);
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+#more-products img {
+    justify-self: center;
+    height: 16rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#more-products a {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    background-color: var(--color-light-background);
+}
+
+#more-products a:hover {
+    background-color: rgb(247, 212, 212);
+    transform: translateX(-2rem);
+}
+
+#more-products > a > div {
+    margin-left: 2em;
+}
+
+.image-frame {
+    border: 1px solid black;
+}
+
+/*-------------------------------------------------------------------------------
+                                    TEAM-PAGE
+--------------------------------------------------------------------------------*/
+
+/* MAIN */
+
+.team_main{
+    background-color: #E2E0D0;
+    padding-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.team_main > div:first-child{
+    margin: 141px 0px 100px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.poulp_duo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#poulp_florian, #poulp_titouanl, #poulp_titouang, #poulp_steven{
+    height:650px;
+    width:650px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#poulp_florian{
+    background-image: url(images/blogo.png);
+}
+
+#poulp_titouanl{
+    background-image: url(images/rlogo.png);
+}
+
+#poulp_titouang{
+    background-image: url(images/glogo.png);
+}
+
+#poulp_steven{
+    background-image: url(images/ylogo.png);
+}
+
+/*TEXT*/
+
+.team_main > div:first-child h1{
+    margin: auto 0;
+}
+
+.poulp_duo h2{
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.poulp_duo h3{
+    text-align: center;
+    margin: 5px 0;
+}
+
+.poulp_duo p{
+    text-align: center;
+    margin: 15px 35px 0;
+}
+
+/*LINKS TO RESUMES*/
+
+.poulp_duo a{
+    display: block;
+    width: 345px;
+    height: 345px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.poulp_duo img{
+    display: block;
+    margin: 21px auto 0px;
+    transition: 0.4s;
+}
+
+.poulp_duo img:hover{
+    filter: drop-shadow(0 0 10px black);
+}
+
+/*-------------------------------------------------------------------------------
+                                PAGE PANIER
+--------------------------------------------------------------------------------*/
+
+#page-panier {
+    min-height: calc(100vh - 8rem);
+}
+
+#page-panier h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 2rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#page-panier .table {
+    margin: 0 0 4rem 0;
+}
+
+#panier-total {
+    font-weight: 700;
+}
+
+#page-panier .btn {
+    margin: 0;
+}
+
+#lock-icon {
+    transform: translateY(-0.15rem);
+}
+
+#page-panier .img-fluid {
+    margin: 2rem 0;
+}
+
+/*-------------------------------------------------------------------------------
+                                PAGE COMPTE
+--------------------------------------------------------------------------------*/
+
+#page-compte {
+    min-height: calc(100vh - 8rem);
+    padding: 0 5vw;
+}
+
+#page-compte h3 {
+    text-align: left;
+    color: black;
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+
+#se-souvenir {
+    transform: translateY(0.25rem);
+}
+
+#page-compte form {
+    padding-right: 5vw;
+}
+
+#page-compte .btn {
+    margin: 2rem 0;
+}
+
+/*-------------------------------------------------------------------------------
+                            CV FLORIAN (BOOTSTRAPED)
+--------------------------------------------------------------------------------*/
+
+.cv-florian-btn {
+    background-color: var(--color-button);
+    font-size: 2rem;
+    color: var(--color-light-text);
+    border: none;
+}
+
+.cv-florian-btn:hover {
+    background-color: var(--color-button-hover);
+}
+
+.cv-florian-btn:focus {
+    background-color: var(--color-navbar);
+}
+
+.cv-florian-pb {
+    background-color: var(--color-button);
+}
+
+#cv-photo-florian {
+    background-image: url("images/cv-photo-florian.jpg");
+    background-size: cover;
+    background-position: 0 25%;
+    height: 25vh;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--color-light-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.5s;
+}
+
+#down-arrow {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: fill 0.5s;
+}
+
+#arrow-toggle {
+    width: 0;
+    height: 0;
+}
+
+#arrow-toggle:checked ~ #cv-photo-florian {
+    height: 100vh;
+}
+
+#arrow-toggle:checked ~ div label {
+    transform: translateY(40vh);
+}
+
+#arrow-toggle:checked ~ div svg {
+    transform: rotateZ(180deg);
+}
+
+#arrow-toggle ~ div label {
+    transition: transform 0.5s;
+}
+
+#arrow-toggle ~ div svg {
+    transition: transform 0.5s;
+}
+
+label[for="arrow-toggle"] {
+    transition: transform 0.5s;
+    transform-origin: center;
+}
+
+#down-arrow:hover {
+    fill: var(--color-button-hover);
+}
+
+#cv-photo-florian h1 {
+    color: var(--color-light-text);
+    font-family: 'Roboto', sans-serif;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+}
+
+button label {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#onglet-competences, #onglet-experiences, #onglet-contact {
+    width: 0;
+    height: 0;
+}
+
+#cv-florian-competences, #cv-florian-experiences, #cv-florian-contact {
+    opacity: 1;
+    position: absolute;
+    top: 3em;
+    left: 5%;
+    width: 90%;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0vw)
+    }
+
+    99% {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+#cv-florian-competences {
+    transform: translateX(100vw);
+    animation: slideOut 1s;
+}
+
+#cv-florian-experiences {
+    transform: translateX(100vw);
+    animation: slideOut 1s;
+}
+
+#cv-florian-contact {
+    transform: translateX(100vw);
+    animation: slideOut 1s;
+}
+
+#onglet-competences:checked ~ #cv-florian-competences {
+    animation: slideIn 1s;
+    transform: translateX(0vw);
+}
+
+#onglet-experiences:checked ~ #cv-florian-experiences {
+    animation: slideIn 1s;
+    transform: translateX(0vw);
+}
+
+#onglet-contact:checked ~ #cv-florian-contact {
+    animation: slideIn 1s;
+    transform: translateX(0vw);
+}
+
+/*-------------------------------------------------------------------------------
+                                  CV TITOUAN GOULHOT Bootstrap
+--------------------------------------------------------------------------------*/
+
+.navigateurtgb{
+    color: primary;
+    position: sticky;
+    background-color: #826F85;
+    font-family: "Segoe Print", "Times New Roman", Verdana;
+}
+
+.navigateurtgb  .nav-tabs .nav-link{
+    color: rgb(0, 0, 0);
+  }
+
+#bodytgb .intro{
+    font-style:normal;
+    margin-left:32px;
+    font-family:"Segoe Print", "Times New Roman", Verdana;
+    padding-left: 48px;
+    background:url("/images/blockquotetgb.png");
+    background-repeat:no-repeat;
+    min-height: 30px;  
+}
+
+.titre-important{
+    text-align: center;
+    color: rgb(99, 97, 97);
+    font-size: 60px;
+    }
+#bodytgb .img {
+    width: 50px;
+    height: 50px;
+    max-width: auto;
+    height: auto;
+}
+
+#bodytgb h1, #bodytgb h2, #bodytgb h3{
+    text-align: center;
+    color: #a65874;
+    font-size: 60px;
+    } 
+
+
+.italic{
+    font-style: italic;
+}
+
+#bodytgb .img {
+    width: 200px;
+    height: 150px;
+    max-width: 100%;
+}
+
+#bodytgb .photo{
+    max-width: 20%;
+    height: auto;
+    }
+
+    #idbodytgb .container {
+    float: left;
+    justify-content: space-between;
+}
+
+#bodytgb .container{
+    margin-left: 15%;
+    margin-right: 15%;
+    }
+
+.carouseltgb{
+    width: auto;
+    height: auto;
+    }
+
+.ligne1{
+    display: flex;
+    justify-content: center;
+    }
+
+    #bodytgbp li{
+        font-size: 16px;
+        line-height: 2;
+          letter-spacing: 1px;
+      }   
+
+    #bodytgb .competences{
+     background: no-repeat center/100% url("/images/digitaltgb.jpg");
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    border-style: inset;
+    margin-top: 150px;
+    margin-right: -1rem;
+    }
+
+    #bodytgb .experiences{
+    text-align: left;
+    margin-top: 10px;
+    font-size: larger;
+    }
+      
+    #bodytgb .formations{
+    font-size: larger;
+    display: flex;
+    text-align: center;
+    }
+        
+    #bodytgb .langues{
+    background-image: url("/images/languetgb.png");
+    text-align: center;
+    font-family: fantasy;
+    width: 400px;
+    height: 300px;
+    }
+
+    #bodytgb .hobbies{
+    text-align: center;
+    position: relative;
+    border-style: inset;
+     }
+      
+.hobbies_itemtgb{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    }
+    #bodytgb{
+        background-image: url("/images/silvertgb.jpg");
+        background-size: cover
+      }
+
+    #idbodytgb .conteneur{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+    
+    #idbodytgb .formulaire{
+    display: flex;
+    justify-content: center;
+    }
+
+
+/*-------------------------------------------------------------------------------
+                                  CATALOG PAGE
+--------------------------------------------------------------------------------*/
+
+#catalog-hero-banner {
+    background-image: url("images/catalogue/pexels-pia-3046629.jpg");
+    background-size: cover;
+    background-position: 0 35%;
+    height: 20rem;
+    filter: grayscale(50%);   
+}
+
+#catalog-main-content h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--color-light-text);
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+}
+
+#catalog-main-content h3 {
+    font-size: 3rem;
+    font-family: 'Rasa', serif;
+    margin: 2rem 0;
+    font-weight: 700;
+    color: black;
+}
+
+.card-img-top {
+    height: 15rem;
+    float: left;
+    object-fit: cover;
+}
+
+#catalog-photo-cutie-poulp {
+    object-position: 10% 0;
+}
+
+#catalog-photo-boucle {
+    object-fit: contain;
+}
+
+.card {
+    margin-bottom: 4rem;
+}
+
+#catalog-main-content .btn {
+    background-color: var(--color-button);
+    border: none;
+    font-size: 1.5rem;
+}
+
+#catalog-main-content .btn:hover {
+    background-color: var(--color-button-hover);
+    border: none;
+}
+
+#catalog-main-content .col-12 {
+    display: flex;
+    justify-content: center;
+}
+
+/*-------------------------------------------------------------------------------
+                        MODELE PAGE PRODUIT (AVEC BOOTSTRAP)
+--------------------------------------------------------------------------------*/
+
+.page-produit-bootstrap {
+    padding: 1.5rem 3rem;
+    width: 100vw;
+}
+
+.page-produit-bootstrap img {
+    width: calc(100vw - 6rem);
+    max-width: 60rem;
+    height: 30rem;
+    object-fit: cover;
+    margin-top: 1rem;
+}
+
+#photo-produit-jouet {
+    object-position: 0 70%;
+}
+
+#photo-produit-mug, #photo-produit-pendentif, #photo-produit-sac, #photo-produit-boucles, #photo-produit-badge {
+    object-fit: contain;
+    object-position: 0 0;
+}
+
+.center-child {
+    display: flex;
+    justify-content: center;
+}
+
+.product-price {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+
+.product-description {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.add-to-cart-button {
+    background-color: var(--color-button);
+    color: var(--color-light-text);
+    font-size: 3rem;
+    padding: 1rem 2rem 1rem 1.2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: background-color 0.2s;
+    margin-bottom: 2rem;
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--color-button-hover); 
+    color: var(--color-light-text);
+}
+
+/*-------------------------------------------------------------------------------
+                                    RESPONSIVE
+--------------------------------------------------------------------------------*/
+
+/*NAV BAR*/
+
+@media (max-width: 1050px) {
+    #tabs-list {
+        position: absolute;
+        flex-direction: column;
+        background-color: #655668;
+        align-items: center;
+        width: 100vw;
+        top: 8rem;
+        left: 100vw;
+        z-index: 4;
+        transition: transform 0.4s;
+    }
+
+    nav {
+        z-index: 2;
+    }
+
+    #main-image {
+        height: 30vw;
+        width: 100vw;
+        top: 6rem;
+        left: 0;
+        z-index: 1;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
+    #tabs-list li {
+        margin: 1em 0 1em 0;
+    }
+
+    #burger {
+        z-index: 3;
+        display: block;
+    }
+
+    #burger:checked ~ #tabs-list {
+        transform: translateX(-100vw);
+    }
+
+    #burger:checked ~ #burger-menu > #burger-line1 {
+        transform: rotateZ(45deg) translateY(1rem) translateX(2rem);
+    }
+
+    #burger:checked ~ #burger-menu > #burger-line2 {
+        transform: scale(0);
+    }
+
+    #burger:checked ~ #burger-menu > #burger-line3 {
+        transform: rotateZ(-45deg) translateY(-1rem) translateX(1.7rem);
+    }
+}
+
+@media (max-width: 950px) {
+    #sell-text {
+        width: 100vw;
+    }
+
+    #sell-text h1 {
+        font-size: 5.5vw;
+    }
+
+    #sell-text h2 {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 730px) {
+    .bubbles {
+        display: none;
+    }
+
+    #sell-text {
+        width: 100vw;
+        margin-bottom: 10vh;
+    }
+
+    #overview img {
+        width: 100%;
+    }
+
+    #promo-time {
+        display: none;
+    }
+
+    #percentage {
+        display: none;
+    }
+
+    #overview {
+        padding-left: 1rem;
+    }
+
+    #buy-button {
+        width: 16rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 700px){
+
+    .team_main > div:first-child img{
+        display:none;
+    }
+
+    #poulp_florian, #poulp_titouanl, #poulp_titouang, #poulp_steven{
+        height:450px;
+        width:450px;
+        background-size: 400px;
+    }
+
+    #main-image {
+        height: 30vw;
+        width: 100vw;
+        top: 13rem;
+        left: 0;
+        z-index: 1;
+    }
+
+    .poulp_duo img{
+        width: 180px;
+    }
+
+    .poulp_duo a{
+        width: 180px;
+        height: 180px;
+    }
+
+    .poulp_duo h2, .poulp_duo h3{
+        margin: 10px;
+    }
+    
+    .poulp_duo p{
+        display: none;
+    }
+}

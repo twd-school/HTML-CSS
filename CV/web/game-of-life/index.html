@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de la vie de Conway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="game-of-life">
+    <main style="margin-top: 1rem">
+        <canvas width="700" height="700" id="canvas">On dirait que votre navigateur ne supporte pas les canvas, désolé</canvas>
+        <aside>
+            <h1>Jeu de la vie de Conway</h1>
+            <nav>
+                <div class="ui-section">
+                    <p>Génération : <span id="generation-number">1</span></p>
+                    <button class="btn" id="play-button">Play</button>
+                    <button class="btn" id="next-gen">Génération suivante</button>
+                </div>
+                <div class="ui-section">
+                    <label for="interval">Intervalle entre 2 générations (en millisecondes) : </label>
+                    <input type="number" min="1" value="200" id="interval"><br>
+                    <label for="columns">Colonnes : </label>
+                    <input type="number" min="10" max="100" value="20" id="columns">
+                    <button class="btn" id="new-board">Générer</button>
+                </div>
+                <div class="ui-section">
+                    <p>Structures</p>
+                    <div id="structures"></div>
+                </div>
+                <div class="ui-section">
+                    <p>Importer (depuis le presse-papier)</p>
+                    <button class="btn" id="import-board">Importer grille</button>
+                </div>
+                <div class="ui-section">
+                    <p>Exporter (dans le presse-papier)</p>
+                    <button class="btn" id="export-board">Exporter grille</button>
+                </div>
+            </nav>
+        </aside>
+    </main>
+    <article>
+        <h2>Qu'est-ce que le jeu de la vie de Conway ?</h2>
+        <p>Le jeu de la vie est un automate cellulaire imaginé par John Horton Conway en 1970 et qui est probablement le plus connu de tous les automates cellulaires. Malgré des règles très simples, le jeu de la vie est Turing-complet.</p>
+        <h3>Les règles</h3>
+        <ul>
+            <li>Chaque cellule peut être soit morte (case blanche), soit vivante (case noire) et possède huit voisines, qui sont les cellules autour d'elle</li>
+            <li>Une cellule morte possédant exactement trois voisines vivantes devient vivante (elle naît)</li>
+            <li>Une cellule vivante possédant deux ou trois voisines vivantes le reste, sinon elle meurt.</li>
+        </ul>
+        <p>Source <a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie" target="_blank">Wikipédia</a></p>
+        <h3>Vidéo pour mieux appréhender le sujet</h3>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S-W0NX97DB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </article>
+    <script src="script.js"></script>
+</body>
+</html>
